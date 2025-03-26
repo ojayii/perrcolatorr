@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 
 const BackButton = ({ darkMode, setDarkMode }) => {
     const location = useLocation(); // Get the current route
-    const modPathName = location.pathname == "/notifications" ? "Notifications" : location.pathname == "/home" ? "Home" : location.pathname == "/favorites" ? "Favorites" : location.pathname == "/activity" ? "Activity" : location.pathname == "/profile" ? "Profile" : location.pathname == "/workouts" ? "Workouts" : location.pathname == "/shorts" ? "Shorts" : location.pathname == "/create-plan" ? "Create" : location.pathname == "/workout-type" ? "Workout Type" : location.pathname == "/workout-equipment" ? "Workout Equipment" : "Video"
+    const modPathName = location.pathname == "/notifications" ? "Notifications" : location.pathname == "/home" ? "Home" : location.pathname == "/" ? "Home" : location.pathname == "/favorites" ? "Favorites" : location.pathname == "/activity" ? "Activity" : location.pathname == "/profile" ? "Profile" : location.pathname == "/workouts" ? "Workouts" : location.pathname == "/shorts" ? "Shorts" : location.pathname == "/create-plan" ? "Create" : location.pathname == "/workout-type" ? "Workout Type" : location.pathname == "/workout-equipment" ? "Workout Equipment" : ""
     // console.log(location.pathname);
     const theme = useTheme();
 

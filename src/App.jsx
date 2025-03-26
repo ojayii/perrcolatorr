@@ -32,7 +32,7 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Activity />} />
+        <Route path="/" element={<HomePage />} />
         {/* <Route path="/home" element={<Home />} /> */}
         <Route path="/activity" element={<Activity />} />
         <Route path="/login" element={<Login />} />

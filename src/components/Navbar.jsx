@@ -62,7 +62,7 @@ export default function Navbar() {
     >
       {/* Home */}
       <Button component={Link} to="/home" sx={{ padding: "0" }}>
-        <Box sx={iconStyle(isActive("/home"))}>
+        <Box sx={iconStyle(isActive("/home") || isActive("/"))}>
           <HomeIcon />
         </Box>
       </Button>

@@ -57,7 +57,7 @@ const workouts = [
 const WorkoutDescription = () => {
     const theme = useTheme();
     return (
-        <Container sx={{width: "100%", padding: "0 10px 5rem 10px", backgroundColor: theme.palette.background.default}}>
+        <Container sx={{width: "100%", maxWidth: "60rem", padding: "0 10px 5rem 10px", backgroundColor: theme.palette.background.default}}>
             <MusicPlayer/>
 
             {workouts.map((exercise, index) => (

@@ -41,7 +41,7 @@ const CustomVideoPlayer = ({ src }) => {
 
     return (
         <PageWrapper>
-            <div style={{ position: "relative", width: "100%", margin: "auto", backgroundColor: theme.palette.background.default, minHeight: "100vh" }}>
+            <div style={{ position: "relative", width: "100%", maxWidth: "80rem", margin: "auto", backgroundColor: theme.palette.background.default, minHeight: "100vh" }}>
                 <video
                     loop
                     ref={videoRef}

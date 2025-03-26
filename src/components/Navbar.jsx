@@ -1,4 +1,4 @@
-import { Box, useTheme } from "@mui/material";
+import { Box, useTheme, Button } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
@@ -32,7 +32,7 @@ export default function Navbar() {
       ? {
         content: '""',
         position: "absolute",
-        right: { lg: "-1rem", },
+        right: { lg: "-0.6rem", },
         top: { lg: "0", md: "-1rem", sm: "-1rem", xs: "-1rem" },
         width: { lg: "3px", md: "100%", sm: "100%", xs: "100%" },
         height: { lg: "100%", md: "3px", sm: "3px", xs: "3px" },
@@ -51,7 +51,7 @@ export default function Navbar() {
       left={0}
       bgcolor={theme.palette.background.paper}
       display="flex"
-      padding={2}
+      paddingBlock={2}
       sx={{
         flexDirection: { lg: "column" },
         right: { lg: "auto", md: "0", sm: "0", xs: "0" },
@@ -61,41 +61,39 @@ export default function Navbar() {
       }}
     >
       {/* Home */}
-      <Link to="/home" style={{ textDecoration: "none" }}>
+      <Button component={Link} to="/home" sx={{ padding: "0" }}>
         <Box sx={iconStyle(isActive("/home"))}>
           <HomeIcon />
         </Box>
-      </Link>
+      </Button>
 
       {/* Favorites */}
-      <Link to="/favorites" style={{ textDecoration: "none" }}>
+      <Button component={Link} to="/favorites" sx={{ padding: "0" }}>
         <Box sx={iconStyle(isActive("/favorites"))}>
           <FavoriteIcon />
         </Box>
-      </Link>
+      </Button>
 
-      {/* Workouts */}
-      <Link to="/activity" style={{ textDecoration: "none" }}>
+      {/* Activity */}
+      <Button component={Link} to="/activity" sx={{ padding: "0" }}>
         <Box sx={iconStyle(isActive("/activity"))}>
           <BarChartIcon />
         </Box>
-      </Link>
+      </Button>
 
-      <Link to="/workouts" style={{ textDecoration: "none" }}>
+      {/* Workouts */}
+      <Button component={Link} to="/workouts" sx={{ padding: "0" }}>
         <Box sx={iconStyle(isActive("/workouts"))}>
           <FitnessCenterIcon />
         </Box>
-      </Link>
-
-      {/* Add New Workout */}
-
+      </Button>
 
       {/* Profile */}
-      <Link to="/profile" style={{ textDecoration: "none" }}>
-        <Box sx={iconStyle(isActive("/profile"))}>
+      <Button component={Link} to="/profile" sx={{ padding: "0" }}>
+      <Box sx={iconStyle(isActive("/profile"))}>
           <PersonIcon />
         </Box>
-      </Link>
+      </Button>
     </Box>
   );
 }

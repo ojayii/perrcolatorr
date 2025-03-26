@@ -86,13 +86,11 @@ export default function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline /> {/* Resets default styles */}
-      <Router>
         <Box sx={{ backgroundColor: darkMode ? darkTheme.palette.background.default : lightTheme.palette.background.default, minHeight: "100vh", minWidth: "100vw", }}>
           <Navbar />
           <BackButton darkMode={darkMode} setDarkMode={setDarkMode} />
           {loading ? <Loader /> : <AnimatedRoutes />}
         </Box>
-      </Router>
     </ThemeProvider>
   );
 }

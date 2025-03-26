@@ -27,7 +27,7 @@ const BackButton = ({ darkMode, setDarkMode }) => {
                 zIndex: 1000,
 
                 // Dynamic Gradient Based on Theme
-                // background: `linear-gradient(to top, rgba(0, 0, 0, 0) 0%, ${theme.palette.background.default} 100%)`,
+                background: `linear-gradient(to top, rgba(0, 0, 0, 0) 0%, ${theme.palette.background.default} 100%)`,
             }}
         >
             {/* <IconButton

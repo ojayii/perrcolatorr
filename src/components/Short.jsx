@@ -45,12 +45,7 @@ const Short = ({ src }) => {
                 style={{ width: "100%", height: "100vh", objectFit: "cover", borderRadius: "0" }}
             />
 
-            {/* Custom Controls */}
-
-            {/* <IconButton sx={{ color: "#29E33C", position: "absolute", right: "1rem", top: "60%", transform: "translateY(-40%)" }}>
-                <FavoriteButton style={{ width: "4rem", height: "4rem" }} />
-            </IconButton> */}
-            <IconButton sx={{ color: "#29E33C", position: "absolute", right: "1rem", top: "80%", transform: "translateY(-20%)" }}>
+            <IconButton sx={{ color: theme.palette.accent, position: "absolute", right: "1rem", top: "80%", transform: "translateY(-20%)" }}>
                 <FavoriteButton style={{ width: "4rem", height: "4rem" }} />
             </IconButton>
             <div style={{ position: "absolute", bottom: "4rem", width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "flex-start", alignItems: "center", backgroundColor: "transparent" }}>
@@ -60,7 +55,7 @@ const Short = ({ src }) => {
                     value={progress}
                     onChange={handleSeek}
                     aria-labelledby="video-progress"
-                    style={{ marginInline: "auto", width: "95%", color: "#29E33C" }}
+                    style={{ marginInline: "auto", width: "95%", color: theme.palette.accent }}
                 />
 
             </div>

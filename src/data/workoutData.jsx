@@ -1,4 +1,3 @@
-// src/data/workoutData.js
 const workouts = [
     {
         id: "1",
@@ -62,7 +61,6 @@ const workouts = [
         ],
         equipment: ["Mat"],
     },
-    // Add more workouts similarly
 ];
 
 export default workouts;

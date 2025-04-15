@@ -63,18 +63,15 @@ const WorkoutDescription = () => {
             {workouts.map((exercise, index) => (
                 <Accordion key={index} sx={{ mb: 1, backgroundColor: theme.palette.background.paper, borderRadius: "12px" }}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: theme.palette.text.primary}}/>}>
-                        {/* <FitnessCenterIcon sx={{ mr: 1, color: "primary.main" }} /> */}
                         <Typography variant="h6" color={theme.palette.text.primary} fontSize={16} fontWeight={"normal"}>{exercise.title}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Box>
                             {exercise.description.map((step, i) => (
                                 <Typography key={i} color={theme.palette.text.primary} pl={2} variant="body1">{step}</Typography>
-                                // <Typography key={i} >
-                                // </Typography>
                             ))}
                         </Box>
-                        <Typography variant="subtitle1" fontWeight="bold" color="#29E33C">
+                        <Typography variant="subtitle1" fontWeight="bold" color={theme.palette.accent}>
                             {exercise.reps}
                         </Typography>
                     </AccordionDetails>

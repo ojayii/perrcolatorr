@@ -1,9 +1,11 @@
-import { Box } from "@mui/material"
+import { Box, useTheme } from "@mui/material"
 
 export default function Loader() {
+    const theme = useTheme();
+
     return (
         <Box
-            sx={{ position: "fixed", top: "0", left: "0", height: "100vh", width: "100vw", backgroundColor: "#5C4033", display: "flex", alignItems: "center", justifyContent: "center", zIndex: "1000" }}
+            sx={{ position: "fixed", top: "0", left: "0", height: "100vh", width: "100vw", backgroundColor: theme.palette.background, display: "flex", alignItems: "center", justifyContent: "center", zIndex: "1000" }}
         >
             <iframe
             style = {{

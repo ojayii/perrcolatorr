@@ -52,9 +52,8 @@ const HomePage = ({ src }) => {
     return (
         <PageWrapper>
             <div style={{ position: "relative", width: "100%", maxWidth: "600px", margin: "auto", padding: "1.5rem", paddingTop: "3rem", backgroundColor: theme.palette.background.default, minHeight: "100vh" }}>
-                {/* <BackButton pageTitle="Home" /> */}
                 <MusicPlayer />
-                <Box sx={{ position: "absolute", top: "4rem", right: "2.5rem", color: "#29E33C" }}>
+                <Box sx={{ position: "absolute", top: "4rem", right: "2.5rem", color: theme.palette.accent }}>
                     <FavoriteButton />
                 </Box>
                 <video
@@ -75,21 +74,19 @@ const HomePage = ({ src }) => {
                     <Button sx={{ color: theme.palette.text.primary, fontSize: "13px", fontWeight: "500", width: "4rem", height: "4rem", border: "2px solid", borderColor: theme.palette.text.primary, borderRadius: "50%" }}>Jug</Button>
                 </Stack >
 
-                {/* Custom Controls */}
-
                 <div style={{ position: "", bottom: "5rem", width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", padding: "1rem", backgroundColor: "", borderRadius: "12px" }}>
                     <Slider
                         value={progress}
                         onChange={handleSeek}
                         aria-labelledby="video-progress"
-                        style={{ flexGrow: 1, width: "100%", color: "#29E33C" }}
+                        style={{ flexGrow: 1, width: "100%", color: theme.palette.accent }}
                     />
 
                     <IconButton onClick={() => handlePrev()} sx={{ color: "white" }}>
                         <SkipPreviousIcon />
                     </IconButton>
 
-                    <IconButton onClick={togglePlayPause} sx={{ backgroundColor: "#29E33C", borderRadius: "50%", padding: "0.8rem", marginInline: "1rem", color: theme.palette.text.primary }}>
+                    <IconButton onClick={togglePlayPause} sx={{ backgroundColor: theme.palette.accent, borderRadius: "50%", padding: "0.8rem", marginInline: "1rem", color: theme.palette.text.primary }}>
                         {playing ? <PauseIcon /> : <PlayArrowIcon />}
                     </IconButton>
 

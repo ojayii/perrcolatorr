@@ -1,33 +1,32 @@
 import React, { useState } from "react";
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, useTheme } from "@mui/material";
 import { PlayArrow, Close } from "@mui/icons-material";
 
 const MusicPlayer = () => {
+    const theme = useTheme();
     const [open, setOpen] = useState(false);
 
     return (
         <Box sx={{ backgroundColor: "transparent" }}>
-            {/* Floating Button */}
             <IconButton
                 sx={{
                     position: "fixed",
                     zIndex: "100",
                     bottom: 80,
                     right: 20,
-                    bgcolor: "#29E33C",
+                    bgcolor: theme.palette.accent,
                     color: "white",
                     p: 2,
                     borderRadius: "50%",
                     boxShadow: 3,
-                    "&:hover": { bgcolor: "#1ed760" },
-                    boxShadow: "0px 0px 15px #29E33C"
+                    "&:hover": { bgcolor: theme.palette.accent },
+                    boxShadow: `0px 0px 15px ${theme.palette.accent}`
                 }}
                 onClick={() => setOpen(!open)}
             >
                 {open ? <Close /> : <PlayArrow />}
             </IconButton>
 
-            {/* Spotify Playlist (No BG, No Padding) */}
             <Box sx={{
                 display: open ? "block" : "none",
                 "&::after": {

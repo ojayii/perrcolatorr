@@ -7,19 +7,14 @@ import AddIcon from "@mui/icons-material/Add";
 import PersonIcon from "@mui/icons-material/Person";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import Brightness4Icon from "@mui/icons-material/Brightness4"; // Moon Icon
-import Brightness7Icon from "@mui/icons-material/Brightness7"; // Sun Icon
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 export default function Navbar() {
-  const location = useLocation(); // Get the current route
-  // console.log(location.pathname);
-
-  // Function to check if the link is active
+  const location = useLocation(); 
   const isActive = (path) => location.pathname === path;
-
   const theme = useTheme();
-
-  // Dynamic styling function for active/inactive icons
   const iconStyle = (active) => ({
     position: "relative",
     display: "flex",
@@ -27,7 +22,7 @@ export default function Navbar() {
     justifyContent: "center",
     padding: "10px",
     borderRadius: "50%",
-    color: active ? "#29E33C" : theme.palette.text.primary,
+    color: active ? theme.palette.accent : theme.palette.text.primary,
     "&::after": active
       ? {
         content: '""',
@@ -36,7 +31,7 @@ export default function Navbar() {
         top: { lg: "0", md: "-1rem", sm: "-1rem", xs: "-1rem" },
         width: { lg: "3px", md: "100%", sm: "100%", xs: "100%" },
         height: { lg: "100%", md: "3px", sm: "3px", xs: "3px" },
-        backgroundColor: "#29E33C",
+        backgroundColor: theme.palette.accent,
         borderRadius: "10px",
 
       }
@@ -60,35 +55,31 @@ export default function Navbar() {
         gap: { lg: "2rem" }
       }}
     >
-      {/* Home */}
       <Button component={Link} to="/home" sx={{ padding: "0" }}>
-        <Box sx={iconStyle(isActive("/home") || isActive("/"))}>
+        <Box sx={iconStyle(isActive("/home"))}>
+          {/* <BarChartIcon /> */}
           <HomeIcon />
         </Box>
       </Button>
 
-      {/* Favorites */}
+      <Button component={Link} to="/shorts" sx={{ padding: "0" }}>
+        <Box sx={iconStyle(isActive("/shorts"))}>
+          <PlayArrowIcon />
+        </Box>
+      </Button>
+
       <Button component={Link} to="/favorites" sx={{ padding: "0" }}>
         <Box sx={iconStyle(isActive("/favorites"))}>
           <FavoriteIcon />
         </Box>
       </Button>
 
-      {/* Activity */}
-      <Button component={Link} to="/activity" sx={{ padding: "0" }}>
-        <Box sx={iconStyle(isActive("/activity"))}>
-          <BarChartIcon />
-        </Box>
-      </Button>
-
-      {/* Workouts */}
       <Button component={Link} to="/workouts" sx={{ padding: "0" }}>
         <Box sx={iconStyle(isActive("/workouts"))}>
           <FitnessCenterIcon />
         </Box>
       </Button>
 
-      {/* Profile */}
       <Button component={Link} to="/profile" sx={{ padding: "0" }}>
       <Box sx={iconStyle(isActive("/profile"))}>
           <PersonIcon />
@@ -97,5 +88,3 @@ export default function Navbar() {
     </Box>
   );
 }
-
-

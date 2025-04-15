@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-// import CustomVideoPlayer from "./CustomVideoPlayer";
-import Short from "./short";
+import Short from "./Short";
 import shortsData from "../data/shortsData"
 import { motion, animate } from "framer-motion";
 import BackButton from "./BackButton";
@@ -24,7 +23,6 @@ const ShortsPlayer = () => {
             const videoHeight = window.innerHeight;
             const currentVideoOffset = currentIndex * videoHeight;
 
-            // Check if the user has scrolled past 30% of the screen
             if (scrollPosition > currentVideoOffset + videoHeight * 0.6) {
                 goToNextVideo();
             } else if (scrollPosition < currentVideoOffset - videoHeight * 0.6) {
@@ -60,12 +58,10 @@ const ShortsPlayer = () => {
 
     return (
         <PageWrapper>
-            {/* <BackButton pageTitle="Shorts"/> */}
             <div
                 ref={containerRef}
                 style={{
                     height: "100vh",
-                    // width: "100vw",
                     overflowY: "auto",
                     scrollSnapType: "y mandatory",
                     scrollbarWidth: "none",

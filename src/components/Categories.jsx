@@ -9,12 +9,12 @@ export default function Categories() {
             <Typography color= {theme.palette.text.primary} pt={2} pb={1}>Categories</Typography>
             <Box
                 sx={{
-                    display: "flex", // Flexbox for row layout
-                    gap: { lg: 2, md: 1, sm: 1, xs: 1 }, // Spacing between items
-                    overflowX: "auto", // Enable horizontal scrolling
-                    whiteSpace: "nowrap", // Prevent wrapping
-                    scrollbarWidth: "none", // Hide scrollbar in Firefox
-                    "&::-webkit-scrollbar": { display: "none" }, // Hide scrollbar in Chrome/Safari
+                    display: "flex", 
+                    gap: { lg: 2, md: 1, sm: 1, xs: 1 },
+                    overflowX: "auto",
+                    whiteSpace: "nowrap",
+                    scrollbarWidth: "none",
+                    "&::-webkit-scrollbar": { display: "none" },
                 }}
             >
                 <Link to="/shorts" style={{ textDecoration: "none", flexGrow: "1" }}>

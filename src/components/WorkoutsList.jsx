@@ -1,4 +1,3 @@
-// src/components/WorkoutsList.js
 import React from "react";
 import workouts from "../data/workoutData";
 import { Card, CardMedia, CardContent, Typography, Button, Grid2 } from "@mui/material";

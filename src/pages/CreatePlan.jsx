@@ -16,21 +16,11 @@ import PageWrapper from "../components/PageWrapper";
 
 export default function CreatePlan({ workout }) {
 
-    // return (
-    //     <Box padding={2}>
-    //       <Typography variant="h5">Create Your Workout Plan</Typography>
-    //       <Typography variant="h6">Workout Type: {workout.type}</Typography>
-    //       <Typography variant="h6">Equipment: {workout.equipment.join(", ") || "None"}</Typography>
-    //     </Box>
-    //   );
-
     const theme = useTheme();
 
     return (
         <PageWrapper>
             <Box bgcolor={theme.palette.background.default} pb={10} maxWidth={"60rem"} marginInline={"auto"}>
-                {/* <BackButton pageTitle={"Workout"}/> */}
-
                 <Card
                     sx={{
                         padding: 2,
@@ -48,20 +38,19 @@ export default function CreatePlan({ workout }) {
                             left: 0,
                             width: "100%",
                             height: "100%",
-                            background: "linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, #5C4033 100%)", // Gradient effect
-                            zIndex: 0, // Ensure it stays behind content
+                            background: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, ${theme.palette.background.default} 100%)`,
+                            zIndex: 0,
                         },
                     }}
                 >
-                    {/* Content inside the card */}
                     <Box
                         sx={{
                             position: "absolute",
-                            bottom: 15, // Push content to bottom
+                            bottom: 15,
                             left: "50%",
                             transform: "translateX(-50%)",
                             p: 1,
-                            zIndex: 1, // Above the gradient
+                            zIndex: 1, 
                             width: "80%",
                             textAlign: "center",
                         }}
@@ -80,8 +69,6 @@ export default function CreatePlan({ workout }) {
 
                 <Box padding={2}>
                     <Typography mb={1} fontWeight={500}>Outline</Typography>
-                    {/* <Typography>A full-body workout is a well-rounded exercise session that targets multiple muscle groups, improving strength, endurance, and flexibility. This type of workout is great for beginners and advanced athletes alike, helping build muscle, burn fat, and improve overall fitness.</Typography> */}
-                    {/* <FullBodyWorkout /> */}
                     <Box>
                         <Box display={"flex"} gap={1.5} alignItems={"center"} mb={1}>
                             <Card sx={{ backgroundColor: "#F7F8FA", padding: "1rem", borderRadius: "12px", display: "flex", justifyContent: "center" }}>
@@ -152,20 +139,17 @@ export default function CreatePlan({ workout }) {
                     transform: { lg: "translateX(-50%)" }
                 }}>
                     <Button
-                        component={Link} // Makes it behave like a router Link
-                        to="/video" // Target route
-                        variant="contained" // MUI Button variant
+                        component={Link}
+                        to="/video"
+                        variant="contained"
                         sx={{
-                            borderRadius: "50px", // Rounded borders
-                            padding: "10px 20px", // Adjust padding
-                            backgroundColor: "#29E33C", // Background color
-                            color: "white", // Text color
-                            textTransform: "none", // Prevents uppercase text
-                            // marginRight: "10px",
-                            // width: "75%",
+                            borderRadius: "50px",
+                            padding: "10px 20px", 
+                            backgroundColor: theme.palette.accent, 
+                            color: "white", 
+                            textTransform: "none",
                             flexGrow: "1",
-                            boxShadow: "0px 0px 15px #29E33C",
-                            // "&:hover": { backgroundColor: "darkblue" },
+                            boxShadow: `0px 0px 15px ${theme.palette.accent}`,
                         }}
                     >
                         Start Workout

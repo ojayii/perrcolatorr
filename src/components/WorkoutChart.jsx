@@ -3,21 +3,22 @@ import { Line } from "react-chartjs-2";
 import { Box, Card, CardContent, Stack, Typography, useTheme } from "@mui/material";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import AutorenewIcon from "@mui/icons-material/Autorenew";
+import NumbersIcon from "@mui/icons-material/Numbers";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
-// Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const WorkoutChart = () => {
     const theme = useTheme();
-    // Dummy workout data (Replace with actual data from your backend)
     const workoutData = {
-        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"], // Days of the week
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"], 
         datasets: [
             {
-                data: [30, 45, 20, 50, 40, 60, 35], // Workout duration in minutes
-                borderColor: "#29E33C",
+                data: [30, 45, 20, 50, 40, 60, 35], 
+                borderColor: theme.palette.accent,
                 backgroundColor: "rgba(0, 123, 255, 0.2)",
-                tension: 0.4, // Smooth curve
+                tension: 0.4,
             },
         ],
     };
@@ -27,7 +28,7 @@ const WorkoutChart = () => {
         maintainAspectRatio: false,
         plugins: {
             legend: {
-                display: false, // Hides the legend (checkbox thing)
+                display: false,
             },
         },
         scales: {
@@ -37,7 +38,6 @@ const WorkoutChart = () => {
             },
             y: {
                 ticks: { color: theme.palette.text.primary },
-                // grid: { display: false },
                 grid: { color: "rgba(255, 255, 255, 0.2)" },
             },
         },
@@ -70,23 +70,23 @@ const WorkoutChart = () => {
             </Card>
             <Stack direction={"column-reverse"} gap={1} height={"10rem"} flexWrap={"wrap"}>
                 <Card sx={{ flexGrow: "1", backgroundColor: theme.palette.background.paper, padding: "1rem", borderRadius: "12px" }}>
-                    <Typography color= {theme.palette.text.primary} fontSize={10} fontWeight={300}>Total time</Typography>
+                    <Typography color= {theme.palette.text.primary} fontSize={10} fontWeight={300}>Total Videos</Typography>
                     <Stack direction={"row"} gap={1} fontSize={16}>
-                        <FavoriteIcon sx={{ color: "#29E33C" }} />
-                        <Typography color= {theme.palette.text.primary} fontSize={16} fontWeight={500}>20 mins</Typography>
+                        <NumbersIcon sx={{ color: theme.palette.accent }} />
+                        <Typography color= {theme.palette.text.primary} fontSize={16} fontWeight={500}>20</Typography>
                     </Stack>
                 </Card>
                 <Card sx={{ flexGrow: "1", backgroundColor: theme.palette.background.paper, padding: "1rem", borderRadius: "12px" }}>
                     <Typography color= {theme.palette.text.primary} fontSize={10} fontWeight={300}>Total Time</Typography>
                     <Stack direction={"row"} gap={1} fontSize={16}>
-                        <FavoriteIcon sx={{ color: "#29E33C" }} />
+                        <AccessTimeIcon sx={{ color: theme.palette.accent }} />
                         <Typography color= {theme.palette.text.primary} fontSize={16} fontWeight={500}>44 mins</Typography>
                     </Stack>
                 </Card>
                 <Card sx={{ flexGrow: "1", backgroundColor: theme.palette.background.paper, padding: "1rem", borderRadius: "12px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                     <Typography color= {theme.palette.text.primary} fontSize={10} fontWeight={300}>Highest Type</Typography>
                     <Stack direction={"row"} gap={1} fontSize={16}>
-                        <FavoriteIcon sx={{ color: "#29E33C" }} />
+                        <AutorenewIcon sx={{ color: theme.palette.accent }} />
                         <Typography color= {theme.palette.text.primary} fontSize={16} fontWeight={500}>Full Body</Typography>
                     </Stack>
                 </Card>
